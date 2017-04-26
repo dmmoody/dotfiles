@@ -98,7 +98,15 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 # Custom prompt with GIT Status
 source ~/Dotfiles/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
-setopt PROMPT_SUBST ; PS1='🐸  %{$fg[blue]%}%c%{$fg[yellow]%}$(__git_ps1 " (%s)")%{$fg[blue]%} $%{$reset_color%} '
+
+function jobs_count {
+  cnt=$(jobs -l | wc -l)
+  if [ $cnt -gt 0 ]; then
+    echo -ne "\e[5m${cnt}\e[m"
+  fi
+}
+
+setopt PROMPT_SUBST ; PS1='🐸  %{$fg[blue]%}%c%{$fg[yellow]%}$(__git_ps1 " (%s)")`jobs_count`%{$fg[blue]%} $%{$reset_color%} '
 
 # Postgres
 export PGDATA=/usr/local/var/postgres
