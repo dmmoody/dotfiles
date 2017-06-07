@@ -403,6 +403,7 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=0
 let g:syntastic_aggregate_errors=0
+let g:syntastic_ruby_checkers = ['rubocop']
 "}}
 " Tagbar"{{
 nmap <silent> <F4> :TagbarToggle<CR>
