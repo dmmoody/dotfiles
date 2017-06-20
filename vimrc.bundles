@@ -81,7 +81,8 @@ Plug 'mmalecki/vim-node.js'
 Plug 'voxpupuli/vim-puppet'
 "}}
 " python"{{
-Plug 'davidhalter/jedi-vim'
+" This breaks my terminal.....grrrrrrrrrrr
+" Plug 'davidhalter/jedi-vim'
 "}}
 " ruby"{{
 Plug 'tpope/vim-rails'
