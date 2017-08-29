@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'colorize'
+
+puts "Hello World from /bin".green
+puts "Good bye idiots".red
