@@ -223,6 +223,7 @@ set modelines=10
 set title
 set titleold="Terminal"
 set titlestring=%F
+set diffopt+=vertical
 
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
