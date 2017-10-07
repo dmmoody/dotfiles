@@ -106,7 +106,7 @@ function jobs_count {
   fi
 }
 
-setopt PROMPT_SUBST ; PS1='🐸  %{$fg[blue]%}%c%{$fg[yellow]%}$(__git_ps1 " (%s)")`jobs_count`%{$fg[blue]%} $%{$reset_color%} '
+setopt PROMPT_SUBST ; PS1=' %{$fg[blue]%}%c%{$fg[yellow]%}$(__git_ps1 " (%s)")`jobs_count`%{$fg[blue]%} $%{$reset_color%} '
 
 # Postgres
 export PGDATA=/usr/local/var/postgres
