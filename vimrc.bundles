@@ -38,6 +38,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'powerline/fonts'
 Plug 'bogado/file-line'
 Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
 
 let g:airline_powerline_fonts = 1
 let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
