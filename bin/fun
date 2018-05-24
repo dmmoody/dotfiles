@@ -1,6 +1,41 @@
 #!/usr/bin/env ruby
 
 require 'colorize'
+require 'pry'
 
-puts "Hello World from /bin".green
-puts "Good bye idiots".red
+# if ARGV.delete("--hello")
+#   puts "Hello World".green
+#   exit
+# end
+
+# if ARGV.delete("--path") || ARGV.delete("-p")
+#   puts "#{Dir.pwd}".magenta
+#   exit
+# end
+
+# new_branch, base_branch = ARGV
+
+if ARGV.delete("--release") || ARGV.delete("-r")
+  base_branch = "release"
+elsif ARGV.delete("--develop") || ARGV.delete("-d")
+  base_branch = "develop"
+elsif ARGV.delete("--master") || ARGV.delete("-m")
+  base_branch = "master"
+else
+  base_branch = ARGV.first
+end
+
+new_branch = `git symbolic-ref -q HEAD`.split("/").last.strip
+
+diff = `git log --left-right --cherry-pick --oneline #{new_branch}...#{base_branch}`
+
+matches = %w[ SI SE PAN ST II RDM WWW AT BI FE CP ].inject([]) do |arr, project_identifier|
+  arr << diff.scan(/#{project_identifier}-\d+/)
+end.flatten
+
+if matches.empty?
+  puts "No messages match the RF git commit JIRA ticket naming convention between #{new_branch.green} and #{base_branch.magenta}"
+else
+  puts "According to the git log, these are the JIRA tickets included in the #{new_branch.green} branch that are not in the #{base_branch.magenta} branch"
+  puts matches.uniq.sort
+end

@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'colorize'
+require 'pry'
+
+puts "lets do this".green
+
+base_branch = ARGV[0] || 'develop'
+new_branch = `git symbolic-ref -q HEAD`.split("/").last.strip
+commits = `git cherry -v #{base_branch} #{new_branch}`
+commits_array = commits.split("\n")
+commits_count = commits_array.count
+puts commits_count.to_s.red
+puts commits.blue
