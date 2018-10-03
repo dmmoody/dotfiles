@@ -150,9 +150,27 @@ ensure_tmux_is_running() {
     tmx
   fi
 }
-ensure_tmux_is_running
+
+# Check which terninal is running
+which_term(){
+  term=$(ps -p $(ps -p $$ -o ppid=) -o args=);
+  case $term in
+    *iTerm*)
+      echo "iTerm and starting tmux"
+      ensure_tmux_is_running
+      ;;
+    *tmux*)
+      echo "You are now using iTerm and Tmux"
+      ;;
+    *)
+      echo "Not using iTerm and will not start tmux"
+      ;;
+  esac
+}
+which_term
 
 export BUNDLER_EDITOR='vi'
 
 # Local ENV Variables Used for Dev
 source ~/.env
+export PATH=$PATH:~/.npm-packages/bin

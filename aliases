@@ -32,7 +32,7 @@ alias .....='cd ../../../..'
 alias grep='grep --color=auto'
 
 # processes
-alias ps='ps -ax'
+alias psx='ps -ax'
 
 # refresh shell
 alias reload='source ~/.zshrc'
