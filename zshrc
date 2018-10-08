@@ -153,9 +153,9 @@ ensure_tmux_is_running() {
 
 # Check which terninal is running
 which_term(){
-  term=$(ps -p $(ps -p $$ -o ppid=) -o args=);
+  term=$TERM_PROGRAM;
   case $term in
-    *iTerm*)
+    iTerm.app*)
       echo "iTerm and starting tmux"
       ensure_tmux_is_running
       ;;
