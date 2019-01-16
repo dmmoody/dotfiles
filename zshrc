@@ -52,7 +52,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git zsh-completions kubectl bundler osx rake ruby docker docker-compose)
 
 # User configuration
-
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export PATH="/Users/dmoody/.gem/ruby/2.1.7/bin:/Users/dmoody/.rubies/ruby-2.1.7/lib/ruby/gems/2.1.0/bin:/Users/dmoody/.rubies/ruby-2.1.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
