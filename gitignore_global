@@ -38,6 +38,9 @@ i*.vagrant
 ehthumbs.db
 Thumbs.db
 
+*.ipynb
+.ipynb_checkpoints/
+.vscode/
 .idea/
 .env
 .ENV
