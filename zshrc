@@ -113,7 +113,7 @@ export PGDATA=/usr/local/var/postgres
 export PGHOST=/tmp
 
 # Python
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 # export PATH="/usr/local/heroku/bin:$PATH"
 
