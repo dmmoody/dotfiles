@@ -116,3 +116,5 @@ Plug 'honza/vim-snippets'
 " docker"{{
 Plug 'ekalinin/Dockerfile.vim'
 "}}
+
+Plug 'craigemery/vim-autotag'

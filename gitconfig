@@ -1,0 +1,24 @@
+# This is Git's per-user configuration file.
+[user]
+  name = Duane M. Moody
+  email = dmmoody@gmail.com
+[credential]
+  helper = osxkeychain
+[core]
+  excludesfile = ~/Dotfiles/gitignore_global
+  editor = vi
+[push]
+  default = simple
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+[commit]
+  template = ~/Dotfiles/gitmessage
+[branch]
+  autosetuprebase = always
+[init]
+  templatedir = ~/Dotfiles/git-templates
