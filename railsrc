@@ -1,1 +1,1 @@
--d postgresql -T --skip-coffee --skip-turbolinks --webpack=react
+-d postgresql -T
